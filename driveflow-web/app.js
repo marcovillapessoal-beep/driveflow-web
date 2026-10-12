@@ -1,5 +1,4 @@
-const API_URL = "https://" + "driveflow-api" + "://";
-
+const API_URL = "https://" + "driveflow-api" + ".onrender.com" + "/api/vehicles";
 const state = {
   vehicles: [],
   selectedPlate: "",
