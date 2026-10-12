@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#7d9fba">
+  <title>Meus veículos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="avatar" aria-hidden="true">
+        <img src="assets/images/avatar.png" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('avatar-fallback');">
+      </div>
+      <p class="greeting">Olá, isso é apenas para aprendizado.</p>
+      <button class="icon-button image-icon-button" id="help-button" aria-label="Ajuda" title="Ajuda">
+        <img src="assets/images/icon-help.png" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('help-fallback');">
+      </button>
+      <button class="icon-button image-icon-button" id="menu-button" aria-label="Menu" title="Menu">
+        <img src="assets/images/icon-menu.png" alt="">
+        <span class="menu-fallback" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </header>
+
+    <section class="content">
+      <div class="section-heading">
+        <h1 id="contador-veiculos">Confira seus veículos. (—)</h1>
+        <button id="refresh-button" class="refresh-button" type="button" aria-label="Atualizar veículos" title="Atualizar">↻</button>
+      </div>
+
+      <section class="details-card" aria-labelledby="details-heading">
+        <div class="card-heading">
+          <span class="gear-icon" aria-hidden="true"><img src="assets/images/icon-settings.png" alt=""></span>
+          <h2 id="details-heading">Configurações do veículo</h2>
+        </div>
+        <div class="separator"></div>
+        <div id="dados-carro-selecionado" class="vehicle-data">
+          <p class="loading">Carregando veículos...</p>
+        </div>
+        <div class="vehicle-preview">
+          <div class="car-illustration" aria-hidden="true">
+            <img id="selected-car-image" src="assets/images/gol-quadrado.png" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('car-image-fallback');">
+          </div>
+          <button id="details-button" class="details-button" type="button">
+            <img src="assets/images/icon-info.png" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('info-fallback');">
+            <span>Detalhes</span>
+          </button>
+          <div id="container-botao-renovar" class="renew-wrap">
+            <button class="btn-action-disabled" disabled>Renovar IPVA do veículo</button>
+          </div>
+        </div>
+      </section>
+
+      <div id="lista-botoes-veiculos" class="vehicle-list" aria-label="Lista de veículos"></div>
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+    </section>
+    <div class="home-indicator" aria-hidden="true"><span></span></div>
+  </main>
+  <dialog id="details-dialog" class="details-dialog">
+    <form method="dialog">
+      <button class="dialog-close" aria-label="Fechar">×</button>
+      <h2>Detalhes do veículo</h2>
+      <div id="dialog-content"></div>
+      <button class="dialog-ok">Fechar</button>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
